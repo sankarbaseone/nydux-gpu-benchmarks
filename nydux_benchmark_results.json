@@ -1,0 +1,89 @@
+{
+  "benchmark_meta": {
+    "title": "NYDUX Multi-Node MPI Bandwidth & Latency Benchmark",
+    "date": "2026-04-21",
+    "author": "Sankar Panneer Selvam",
+    "company": "NYDUX",
+    "website": "nydux.ai",
+    "tool": "OSU Micro-Benchmarks v7.3",
+    "cluster": {
+      "node1": "nydux-nccl-node-1 — GCP n2-standard-8 — 8 vCPU Intel Cascade Lake — 32GB RAM",
+      "node2": "nydux-nccl-node-2 — GCP n2-standard-4 — 4 vCPU Intel Cascade Lake — 16GB RAM",
+      "network": "GCP VPC Internal — us-central1-a",
+      "mpi": "OpenMPI 4.1.2",
+      "nccl_installed": "NCCL 2.30.3-1+cuda13.2"
+    }
+  },
+  "latency_test": {
+    "test": "OSU MPI Point-to-Point Latency Test v7.3",
+    "unit": "microseconds (us)",
+    "key_findings": {
+      "min_latency_us": 20.18,
+      "latency_1kb_us": 21.86,
+      "latency_64kb_us": 158.26,
+      "latency_1mb_us": 466.37,
+      "latency_4mb_us": 1821.39
+    },
+    "data": [
+      {"size_bytes": 1, "latency_us": 20.73},
+      {"size_bytes": 2, "latency_us": 20.18},
+      {"size_bytes": 4, "latency_us": 21.08},
+      {"size_bytes": 8, "latency_us": 20.99},
+      {"size_bytes": 16, "latency_us": 20.88},
+      {"size_bytes": 32, "latency_us": 21.03},
+      {"size_bytes": 64, "latency_us": 20.73},
+      {"size_bytes": 128, "latency_us": 21.12},
+      {"size_bytes": 256, "latency_us": 20.97},
+      {"size_bytes": 512, "latency_us": 21.47},
+      {"size_bytes": 1024, "latency_us": 21.86},
+      {"size_bytes": 2048, "latency_us": 25.12},
+      {"size_bytes": 4096, "latency_us": 26.60},
+      {"size_bytes": 8192, "latency_us": 31.12},
+      {"size_bytes": 16384, "latency_us": 38.14},
+      {"size_bytes": 32768, "latency_us": 54.98},
+      {"size_bytes": 65536, "latency_us": 158.26},
+      {"size_bytes": 131072, "latency_us": 159.90},
+      {"size_bytes": 262144, "latency_us": 197.02},
+      {"size_bytes": 524288, "latency_us": 295.82},
+      {"size_bytes": 1048576, "latency_us": 466.37},
+      {"size_bytes": 2097152, "latency_us": 944.32},
+      {"size_bytes": 4194304, "latency_us": 1821.39}
+    ]
+  },
+  "bandwidth_test": {
+    "test": "OSU MPI Point-to-Point Bandwidth Test v7.3",
+    "unit": "MB/s",
+    "key_findings": {
+      "peak_bandwidth_mbs": 1530.02,
+      "peak_at_size": "4MB",
+      "bandwidth_1kb_mbs": 460.94,
+      "bandwidth_1mb_mbs": 1105.01,
+      "bandwidth_4mb_mbs": 1530.02
+    },
+    "data": [
+      {"size_bytes": 1, "bandwidth_mbs": 0.38},
+      {"size_bytes": 2, "bandwidth_mbs": 0.76},
+      {"size_bytes": 4, "bandwidth_mbs": 2.07},
+      {"size_bytes": 8, "bandwidth_mbs": 3.99},
+      {"size_bytes": 16, "bandwidth_mbs": 8.81},
+      {"size_bytes": 32, "bandwidth_mbs": 17.29},
+      {"size_bytes": 64, "bandwidth_mbs": 34.17},
+      {"size_bytes": 128, "bandwidth_mbs": 64.57},
+      {"size_bytes": 256, "bandwidth_mbs": 130.93},
+      {"size_bytes": 512, "bandwidth_mbs": 245.95},
+      {"size_bytes": 1024, "bandwidth_mbs": 460.94},
+      {"size_bytes": 2048, "bandwidth_mbs": 794.61},
+      {"size_bytes": 4096, "bandwidth_mbs": 1304.12},
+      {"size_bytes": 8192, "bandwidth_mbs": 965.40},
+      {"size_bytes": 16384, "bandwidth_mbs": 924.39},
+      {"size_bytes": 32768, "bandwidth_mbs": 1019.24},
+      {"size_bytes": 65536, "bandwidth_mbs": 1058.45},
+      {"size_bytes": 131072, "bandwidth_mbs": 708.65},
+      {"size_bytes": 262144, "bandwidth_mbs": 763.64},
+      {"size_bytes": 524288, "bandwidth_mbs": 867.87},
+      {"size_bytes": 1048576, "bandwidth_mbs": 1105.01},
+      {"size_bytes": 2097152, "bandwidth_mbs": 1172.93},
+      {"size_bytes": 4194304, "bandwidth_mbs": 1530.02}
+    ]
+  }
+}
